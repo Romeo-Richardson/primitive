@@ -1,12 +1,12 @@
 
 export const getProducts = async () => {
-    const getRequest = await fetch('http://localhost:3001/handleProducts')
+    const getRequest = await fetch('/handleProducts')
     const getResponse = await getRequest.json()
     return getResponse
 }
 
 export const postComment = async (payload) => {
-    await fetch('http://localhost:3001/handleComments', {
+    await fetch('/handleComments', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -17,7 +17,7 @@ export const postComment = async (payload) => {
 }
 
 export const postAvg = async (payload) => {
-    await fetch('http://localhost:3001/handleAvg', {
+    await fetch('/handleAvg', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -28,7 +28,7 @@ export const postAvg = async (payload) => {
 }
 
 export const stripeCheckout = async (cart) => {
-    const postRequest = await fetch('http://localhost:3001/stripeCheckout', {
+    const postRequest = await fetch('/stripeCheckout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(cart)
