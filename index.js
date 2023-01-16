@@ -21,9 +21,15 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://ZirrKing:659376752990
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '/client/build')))
 
+    app.get('/handleProducts', async (req, res) => {
+        const products = await ProductModel.find()
+        res.json(products)
+    })
+
     app.get('/*', (req, res) => {
         res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
     })
+
 } else app.get('/', (req, res) => {
     res.send('api running')
 })
@@ -49,10 +55,6 @@ app.post('/stripeCheckout', async (req, res) => {
     }))
 })
 
-app.get('/handleProducts', async (req, res) => {
-    const products = await ProductModel.find()
-    res.json(products)
-})
 
 app.put('/handleComments', async (req, res) => {
     const id = req.body._id
