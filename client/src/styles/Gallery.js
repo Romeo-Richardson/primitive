@@ -6,7 +6,8 @@ position: relative;
 top: 270px;
 display: flex;
 flex-wrap: wrap;
-flex-direction: column;
+flex-direction: row;
+justify-content: space-between;
 
 @media screen and (max-width: 1750px) {
     width: 80vw;
