@@ -4,7 +4,7 @@ export const Gallery = styled.div`
 width: 1720px;
 position: relative;
 top: 270px;
-display: flexbox;
+display: flex;
 flex-wrap: wrap;
 flex-direction: column;
 
