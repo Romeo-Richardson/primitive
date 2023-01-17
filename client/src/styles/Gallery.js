@@ -5,6 +5,7 @@ width: 1720px;
 position: relative;
 top: 270px;
 display: flexbox;
+flex-direction: column;
 flex-wrap: wrap;
 justify-content: space-between;
 
