@@ -120,7 +120,7 @@ function App() {
         <CartContainer>
           <CartIconContainer>
             <CartIconSubContainer>
-              {cart.length > 0 ? <CartCounterContainer>{cart.length}</CartCounterContainer>
+              {cart.length > 0 ? <CartCounterContainer onClick={toggleCart}>{cart.length}</CartCounterContainer>
                 : <></>}
               <ResponsiveCartIcon src={CartIcon} onClick={toggleCart}></ResponsiveCartIcon>
             </CartIconSubContainer>
